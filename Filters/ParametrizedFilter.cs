@@ -5,24 +5,20 @@ using System.Text;
 
 namespace MyPhotoshop
 {
-    public abstract class ParametrizedFilter: IFilter
+    public abstract class ParametrizedFilter<TParametrs>: IFilter
+        where TParametrs : IParameters, new ()
     {
-        private IParameters parameters;
-        public ParametrizedFilter (IParameters parameters)
-        {
-            this.parameters = parameters;
-        }
-
         public ParameterInfo[] GetParameters()
         {
-            return parameters.GetDiscription();
+            return new TParametrs().GetDiscription();
         }
 
         public Photo Process(Photo original, double[] values)
         {
-            this.parameters.SetValues(values);
-            return Process(original, this.parameters);
+            var parameters = new TParametrs();
+            parameters.SetValues(values);
+            return Process(original, parameters);
         }
-        public abstract Photo Process(Photo original, IParameters parameters);
+        public abstract Photo Process(Photo original, TParametrs parameters);
     }
 }

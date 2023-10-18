@@ -76,7 +76,7 @@ namespace MyPhotoshop
         }
 
         		
-		public void AddFilter(ParametrizedFilter filter)
+		public void AddFilter(IFilter filter)
 		{
 			filtersSelect.Items.Add(filter);
 			if (filtersSelect.SelectedIndex==-1)
@@ -88,7 +88,7 @@ namespace MyPhotoshop
 		
 		void FilterChanged(object sender, EventArgs e)
 		{
-			var filter=(ParametrizedFilter)filtersSelect.SelectedItem;
+			var filter=(IFilter)filtersSelect.SelectedItem;
 			if (filter==null) return;
 			if (parametersPanel!=null) Controls.Remove (parametersPanel);
 			parametersControls=new List<NumericUpDown>();
@@ -131,7 +131,7 @@ namespace MyPhotoshop
 		void Process(object sender, EventArgs empty)
 		{
 			var data=parametersControls.Select(z=>(double)z.Value).ToArray();
-			var filter=(ParametrizedFilter)filtersSelect.SelectedItem;
+			var filter=(IFilter)filtersSelect.SelectedItem;
 			Photo result=null;
      		result=filter.Process(originalPhoto,data);
 	        var resultBmp=Convertors.Photo2Bitmap(result);
