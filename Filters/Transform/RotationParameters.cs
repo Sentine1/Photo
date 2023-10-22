@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyPhotoshop
+namespace MyPhotoshop.Filters
 {
     public class RotationParameters : IParameters
     {
@@ -13,7 +13,6 @@ namespace MyPhotoshop
             return new[]
            {
                 new ParameterInfo { Name="Угол", MaxValue=360, MinValue=0, Increment=5, DefaultValue=0 }
-
             };
         }
 

@@ -23,19 +23,19 @@ namespace MyPhotoshop
 					}
 				));
 
-			//window.AddFilter(new TransformFilter(
-			//	"Отразить по горизонтали",
-			//	size=>size,
-			//	(point,size) => new Point(size.Width-point.X - 1,point.Y)
-			//	));
+            window.AddFilter(new TransformFilter(
+                "Отразить по горизонтали",
+                size => size,
+                (point, size) => new Point(size.Width - point.X - 1, point.Y)
+                ));
 
-			//window.AddFilter(new TransformFilter(
-			//	"Поворот против часовой стрелки",
-			//	size => new Size(size.Height, size.Width),
-			//	(point, size) => new Point(point.Y, point.X)
-			//	));
-			
-			window.AddFilter(new TransformFilter<RotationParameters>(
+            window.AddFilter(new TransformFilter(
+                "Поворот против часовой стрелки",
+                size => new Size(size.Height, size.Width),
+                (point, size) => new Point(point.Y, point.X)
+                ));
+
+            window.AddFilter(new TransformFilter<RotationParameters>(
 				"Свободное вращение", new RotateTransformer()));
 			Application.Run (window);
 		}

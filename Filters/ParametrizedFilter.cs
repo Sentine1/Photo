@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyPhotoshop
+namespace MyPhotoshop.Filters
 {
     public abstract class ParametrizedFilter<TParametrs>: IFilter
         where TParametrs : IParameters, new ()
