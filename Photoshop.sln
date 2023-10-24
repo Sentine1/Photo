@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.33423.256
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photoshop", "Photoshop.csproj", "{1E278156-A549-4E5D-B524-FBF3C53E7021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Profiler", "..\Profiler\Profiler.csproj", "{DB3CAA4B-48CA-44A4-96DC-8D7E3DB388CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Profiler", "Profiler.csproj", "{DB3CAA4B-48CA-44A4-96DC-8D7E3DB388CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

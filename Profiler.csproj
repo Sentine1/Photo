@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Photoshop\Photoshop.csproj">
+    <ProjectReference Include="Photoshop.csproj">
       <Project>{1E278156-A549-4E5D-B524-FBF3C53E7021}</Project>
       <Name>Photoshop</Name>
     </ProjectReference>
